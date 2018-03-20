@@ -26,7 +26,7 @@ def evaluate(proid):
     pinlist = []
 
     if request.method == 'GET':
-        phone = Phone.objects.get(id = proid)
+        phone = Phone.objects.with_id(proid)
         return render_template('Detail/detail.html',product = phone)
     elif request.method == 'POST':
         form = request.form
