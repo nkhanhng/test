@@ -39,6 +39,10 @@ def evaluate(proid):
         pin = int(form['pin'])
         comment = form['comment']
 
+        print(comment)
+
+
+
         new_eva = Evaluate(phone = phone,
                            design = design,
                            screen = screen,
