@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+</style>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="phone.css">
+  </head>
+  <body>
+    {% for phone in all_phones %}
+      <b>{{loop.index}}.{{phone.product_name}}</b>
+      <div class="flex">
+        <img src = {{phone.product_main_image}}></img>
+        <div class="inline-block width-30-percent">
+          <p>Màn hình: {{phone.display_technology}}, {{phone.display_size}}, {{phone.display_resolution}}</p>
+          <p>Hệ điều hành: {{phone.operating_system}}</p>
+          <p>Camera sau: {{phone.back_cam_re}}</p>
+          <p>Camera trước: {{phone.front_cam_res}}</p>
+          <p>CPU: {{phone.chipset}}</p>
+          <p>RAM: {{phone.ram}}</p>
+          <p>Bộ nhớ trong: {{phone.rom}}</p>
+          <p>Thẻ SIM:{{phone.sim}}</p>
+          <p>Dung lượng pin: {{phone.battery_capacity}}</p>
+        </div>
+      </div>
+    {% endfor %}
+  </body>
+</html>
+<!DOCTYPE html>
