@@ -14,38 +14,36 @@
     <h3>Tieu chi danh gia</h3>
     <div>
     <form method="post">
-      <table>
-
-
-      <label class="width-100px">Thiet ke</label>
+      <label>Thiet ke</label>
       {% include "Detail/moredetail/design.html" %}
 
       <br>
-      <label class="width-100px">Man hinh</label>
+      <label>Man hinh</label>
       {% include "Detail/moredetail/screen.html" %}
 
       <br>
-      <label class="width-100px">Tinh nang</label>
+      <label>Tinh nang</label>
       {% include "Detail/moredetail/function.html" %}
 
       <br>
-      <label class="width-100px">Trai Nghiem</label>
+      <label>Trai Nghiem</label>
       {% include "Detail/moredetail/exp.html" %}
 
       <br>
-      <label class="width-100px">Camera</label>
+      <label>Camera</label>
       {% include "Detail/moredetail/camera.html" %}
 
       <br>
-      <label class="width-100px">Pin</label>
+      <label>Pin</label>
       {% include "Detail/moredetail/pin.html" %}
 
       <br>
-      <label class="width-100px">Comment</label>
-      <input type="text" name="comment">
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">Comment</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      </div>
       <br>
       <input type="submit" name="" value="Submit" required>
-      </table>
     </form>
     </div>
     <div>
