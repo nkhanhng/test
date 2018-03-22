@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Đánh giá sản phẩm</title>
+    <title>Danh gia san pham</title>
     {% include "meta-data.html" %}
     <link rel="stylesheet" href="../static/detail.css">
   </head>
@@ -12,41 +12,52 @@
       <p>{{product.product_name}}</p>
     </div>
 
-    <h3>Tiêu chí đánh giá</h3>
-    <div>
+    <h3 class="text-center font"><i class="fas fa-clipboard-list"></i> Tiêu chí đánh giá</h3>
+
     <form method="post">
-      <label class="width-100px">Thiết kế</label>
-      {% include "Detail/moredetail/design.html" %}
+      <div class="container">
+        <div class="row">
+          <label class="width-100px col font-s-l font">Thiết kế
+          <div><i class="fas fa-mobile fa-3x"></i></div></label>
+          {% include "Detail/moredetail/design.html" %}
 
-      <br>
-      <label class="width-100px">Màn hình</label>
-      {% include "Detail/moredetail/screen.html" %}
+          <br>
+          <label class="width-100px col font-s-l font">Màn hình
+          <div><i class="fas fa-mobile-alt fa-3x"></i></div></label>
+          {% include "Detail/moredetail/screen.html" %}
 
-      <br>
-      <label class="width-100px">Tính năng</label>
-      {% include "Detail/moredetail/function.html" %}
+          <br>
+          <label class="width-100px col font-s-l font">Tính năng
+          <div><i class="fas fa-cogs fa-3x"></i></div></label>
+          {% include "Detail/moredetail/function.html" %}
 
-      <br>
-      <label class="width-100px">Trải nghiệm</label>
-      {% include "Detail/moredetail/exp.html" %}
+          <br>
+          <label class="width-100px col font-s-l font">Trải nghiệm
+          <div><i class="fas fa-smile fa-3x"></i></div></label>
+          {% include "Detail/moredetail/exp.html" %}
 
-      <br>
-      <label class="width-100px">Camera</label>
-      {% include "Detail/moredetail/camera.html" %}
+          <br>
+          <label class="width-100px col font-s-l font">Camera
+          <div><i class="fas fa-camera fa-3x"></i></div></label>
+          {% include "Detail/moredetail/camera.html" %}
 
-      <br>
-      <label class="width-100px">Pin</label>
-      {% include "Detail/moredetail/pin.html" %}
-
-      <br>
-      <div class="form-group">
-        <label for="exampleFormControlTextarea1">Nhận xét</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" name="comment" rows="3"></textarea>
+          <br>
+          <label class="width-100px col font-s-l font">Pin
+          <div><i class="fas fa-battery-three-quarters fa-3x"></i></div></label>
+          {% include "Detail/moredetail/pin.html" %}
+          <div class="w-100"></div>
+          <br>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1" class="font">Nhận xét <i class="fas fa-comments"></i> :</label>
+            <textarea class="form-control area-700-100" id="exampleFormControlTextarea1" name="comment" rows="3"></textarea>
+          </div>
+          <div class="w-100"></div>
+          <br>
+          <input type="submit" name="" value="Submit" required>
+        </div>
       </div>
-      <br>
-      <input type="submit" name="" value="Submit" required>
     </form>
-    </div>
+
     <div>
       <h2>{{average}}</h2>
     </div>
