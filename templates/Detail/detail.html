@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Danh gia san pham</title>
+    <title>Đánh giá sản phẩm</title>
     {% include "meta-data.html" %}
     <link rel="stylesheet" href="../static/detail.css">
   </head>
@@ -12,22 +12,22 @@
       <p>{{product.product_name}}</p>
     </div>
 
-    <h3>Tieu chi danh gia</h3>
+    <h3>Tiêu chí đánh giá</h3>
     <div>
     <form method="post">
-      <label class="width-100px">Thiet ke</label>
+      <label class="width-100px">Thiết kế</label>
       {% include "Detail/moredetail/design.html" %}
 
       <br>
-      <label class="width-100px">Man hinh</label>
+      <label class="width-100px">Màn hình</label>
       {% include "Detail/moredetail/screen.html" %}
 
       <br>
-      <label class="width-100px">Tinh nang</label>
+      <label class="width-100px">Tính năng</label>
       {% include "Detail/moredetail/function.html" %}
 
       <br>
-      <label class="width-100px">Trai Nghiem</label>
+      <label class="width-100px">Trải nghiệm</label>
       {% include "Detail/moredetail/exp.html" %}
 
       <br>
@@ -40,7 +40,7 @@
 
       <br>
       <div class="form-group">
-        <label for="exampleFormControlTextarea1">Comment</label>
+        <label for="exampleFormControlTextarea1">Nhận xét</label>
         <textarea class="form-control" id="exampleFormControlTextarea1" name="comment" rows="3"></textarea>
       </div>
       <br>

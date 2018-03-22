@@ -2,6 +2,8 @@ from flask import *
 import mlab
 from models.phone import Phone
 from models.evaluate import Evaluate
+from models.average import Average
+
 
 mlab.connect()
 app = Flask(__name__)
@@ -18,17 +20,18 @@ def phone():
 
 @app.route('/danhgiasanpham/<proid>',methods = ['GET','POST'])
 def evaluate(proid):
-    designlist = []
-    screenlist = []
-    funclist = []
-    explist = []
-    camlist = []
-    pinlist = []
 
     if request.method == 'GET':
         phone = Phone.objects.with_id(proid)
         return render_template('Detail/detail.html',product = phone)
     elif request.method == 'POST':
+        designlist = []
+        screenlist = []
+        funclist = []
+        explist = []
+        camlist = []
+        pinlist = []
+
         form = request.form
         phone = Phone.objects.get(id = proid)
         design = int(form['design'])
@@ -38,10 +41,6 @@ def evaluate(proid):
         cam = int(form['cam'])
         pin = int(form['pin'])
         comment = form['comment']
-
-        print(comment)
-
-
 
         new_eva = Evaluate(phone = phone,
                            design = design,
@@ -55,6 +54,8 @@ def evaluate(proid):
         new_eva.save()
 
         totalEva = Evaluate.objects(phone = phone)
+        new_averagePoint = Average.objects.get(phone = phone)
+
         for object in totalEva:
             designlist.append(object['design'])
             screenlist.append(object['screen'])
@@ -79,6 +80,8 @@ def evaluate(proid):
         total = avgdesign + avgscreen + avgfunc + avgexp + avgcam + avgpin
 
         average = total / 6
+
+        new_averagePoint.update(set__averagePoint = average)
 
         return render_template("Detail/detail.html", average = "{0:.1f}".format(average), product = phone)
 
