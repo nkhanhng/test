@@ -14,3 +14,13 @@
 .font{
   font-family: 'Bree Serif', serif;
 }
+
+.bg{
+  background-image: url('https://gravitywerks.com/wp-content/uploads/2017/02/computer-blue-opacity-background-1024x683.jpg');
+  background-attachment: fixed;
+  background-size:cover;
+}
+
+.col-white{
+  color: white;
+}

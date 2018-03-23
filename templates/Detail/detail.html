@@ -8,58 +8,70 @@
   </head>
   <body>
     <div>
-      <img src={{product.product_main_image}} alt="">
       <p>{{product.product_name}}</p>
     </div>
 
-    <h3 class="text-center font"><i class="fas fa-clipboard-list"></i> Tiêu chí đánh giá</h3>
+    <div class="bg">
+    <h3 class="text-center font col-white"><i class="fas fa-clipboard-list"></i> Tiêu chí đánh giá</h3>
 
     <form method="post">
       <div class="container">
         <div class="row">
-          <label class="width-100px col font-s-l font">Thiết kế
-          <div><i class="fas fa-mobile fa-3x"></i></div></label>
-          {% include "Detail/moredetail/design.html" %}
+          <section class="col col-md-4 text-center border-dark col-white">
+            <label class=" font-s-l font mx-auto">Thiết kế
+            <div><i class="fas fa-mobile fa-3x"></i></div></label>
+            {% include "Detail/moredetail/design.html" %}
+          </section>
 
-          <br>
-          <label class="width-100px col font-s-l font">Màn hình
-          <div><i class="fas fa-mobile-alt fa-3x"></i></div></label>
-          {% include "Detail/moredetail/screen.html" %}
+          <section class="col col-md-4 text-center border-left border-right border-dark  col-white">
+            <label class=" font-s-l font text-center">Màn hình
+            <div><i class="fas fa-mobile-alt fa-3x"></i></div></label>
+            {% include "Detail/moredetail/screen.html" %}
+          </section>
 
-          <br>
-          <label class="width-100px col font-s-l font">Tính năng
-          <div><i class="fas fa-cogs fa-3x"></i></div></label>
-          {% include "Detail/moredetail/function.html" %}
+          <section class="col col-md-4 text-center border-dark  col-white">
+            <label class=" font-s-l font">Tính năng
+            <div><i class="fas fa-cogs fa-3x"></i></div></label>
+            {% include "Detail/moredetail/function.html" %}
+          </section>
 
-          <br>
-          <label class="width-100px col font-s-l font">Trải nghiệm
-          <div><i class="fas fa-smile fa-3x"></i></div></label>
-          {% include "Detail/moredetail/exp.html" %}
+          <section class="col col-md-4 text-center mt-3  col-white">
+            <label class=" col font-s-l font">Trải nghiệm
+            <div><i class="fas fa-smile fa-3x"></i></div></label>
+            {% include "Detail/moredetail/exp.html" %}
+          </section>
 
-          <br>
-          <label class="width-100px col font-s-l font">Camera
-          <div><i class="fas fa-camera fa-3x"></i></div></label>
-          {% include "Detail/moredetail/camera.html" %}
+          <section class="col col-md-4 text-center mt-3 border-left border-right border-dark  col-white">
+            <label class=" col font-s-l font">Camera
+            <div><i class="fas fa-camera fa-3x"></i></div></label>
+            {% include "Detail/moredetail/camera.html" %}
+          </section>
 
-          <br>
-          <label class="width-100px col font-s-l font">Pin
-          <div><i class="fas fa-battery-three-quarters fa-3x"></i></div></label>
-          {% include "Detail/moredetail/pin.html" %}
-          <div class="w-100"></div>
-          <br>
-          <div class="form-group">
-            <label for="exampleFormControlTextarea1" class="font">Nhận xét <i class="fas fa-comments"></i> :</label>
-            <textarea class="form-control area-700-100" id="exampleFormControlTextarea1" name="comment" rows="3"></textarea>
-          </div>
-          <div class="w-100"></div>
-          <br>
-          <input type="submit" name="" value="Submit" required>
+          <section class="col col-md-4 text-center mt-3  col-white">
+            <label class=" col font-s-l font">Pin
+            <div><i class="fas fa-battery-three-quarters fa-3x"></i></div></label>
+            {% include "Detail/moredetail/pin.html" %}
+          </section>
+
+            <div class="w-100"></div>
+            <br>
+            <section class="text-center mx-auto  col-white">
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1" class="font">Nhận xét <i class="fas fa-comments"></i> :</label>
+                <textarea class="form-control area-700-100" id="exampleFormControlTextarea1" name="comment" rows="3"></textarea>
+              </div>
+            </section>
+            <div class="w-100"></div>
+            <br>
+            <section class="mx-auto">
+              <button class="btn btn-primary" type="submit">Đánh giá</button>
+            </section>
         </div>
       </div>
     </form>
-
     <div>
-      <h2>{{average}}</h2>
+      <h2 class="text-center">{{average}}</h2>
+    </div>
     </div>
   </body>
 </html>
