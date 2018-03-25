@@ -40,7 +40,6 @@ def evaluate(proid):
         exp = int(form['exp'])
         cam = int(form['cam'])
         pin = int(form['pin'])
-        comment = form['comment']
 
         new_eva = Evaluate(phone = phone,
                            design = design,
@@ -48,8 +47,8 @@ def evaluate(proid):
                            func = func,
                            exp = exp,
                            cam = cam,
-                           pin = pin,
-                           comment = comment)
+                           pin = pin)
+
 
         new_eva.save()
 
@@ -63,6 +62,7 @@ def evaluate(proid):
             explist.append(object['exp'])
             camlist.append(object['cam'])
             pinlist.append(object['pin'])
+
 
         designsum = sum(designlist)
         avgdesign = designsum / len(designlist)
