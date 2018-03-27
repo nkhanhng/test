@@ -2,8 +2,9 @@
   font-family: 'Lobster', cursive;
 }
 
-.mb-300px {
-  margin-bottom: 300px;
+.body-padding-top {
+    padding-top: 66px;
+    margin: 30px;
 }
 
 .logo {
@@ -159,6 +160,38 @@
   background-image: url("../../static/image/iphonex.jpg");
 }
 
-.width-100px{
-  width: 100px;
+.display-block {
+  display: block;
+}
+
+.text-size-2em {
+   font-size: 2em;
+}
+
+.text-size-4em {
+   font-size: 4em;
+}
+
+.text-size-400-percent {
+    font-size: 400%;
+    font-weight: bold;
+}
+
+.sizing {
+  width: 130px;
+  height: 130px;
+}
+
+.border-width-15px {
+  border-width: 15px;
+  border-style: solid;
+  border-radius: 50%;
+}
+
+.font-family-roboto {
+  font-family: 'Roboto', sans-serif;
+}
+
+.margin-bottom-0px {
+  margin-bottom: 0px;
 }

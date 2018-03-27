@@ -1,0 +1,51 @@
+<section class="container-fluid body-padding-top">
+  <div class="d-flex justify-content-around">
+    <img src = {{product.product_main_image}}></img>
+    <div class="d-flex flex-column align-items-center">
+      <b class="text-uppercase text-size-2em">{{product.product_name}}</b>
+      <div class="border-width-15px d-flex sizing justify-content-center" style='border-color: rgb({{red}}, {{green}}, {{blue}})'>
+        <p class="text-size-400-percent align-items-center d-flex font-family-roboto margin-bottom-0px" >{{score}}</p>
+      </div>
+    </div>
+    <div class="">
+      <table class="table table-striped">
+        <tr>
+          <td>Màn hình: </td>
+          <td>{{product.display_technology}}, {{product.display_size}}, {{product.display_resolution}}</td>
+        </tr>
+        <tr>
+          <td>Hệ điều hành:</td>
+          <td>{{product.operating_system}}</td>
+        </tr>
+        <tr>
+          <td>Camera sau:</td>
+          <td>{{product.back_cam_re}}</td>
+        </tr>
+        <tr>
+          <td>Camera trước:</td>
+          <td>{{product.front_cam_res}}</td>
+        </tr>
+        <tr>
+          <td>CPU:</td>
+          <td>{{product.chipset}}</td>
+        </tr>
+        <tr>
+          <td>RAM:</td>
+          <td>{{product.ram}}</td>
+        </tr>
+        <tr>
+          <td>ROM:</td>
+          <td>{{product.rom}}</td>
+        </tr>
+        <tr>
+          <td>Thẻ SIM:</td>
+          <td>{{product.sim}}</td>
+        </tr>
+        <tr>
+          <td>Dung lượng pin:</td>
+          <td>{{product.battery_capacity}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</section>

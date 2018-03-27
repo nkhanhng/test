@@ -20,10 +20,15 @@ def phone():
 
 @app.route('/danhgiasanpham/<proid>',methods = ['GET','POST'])
 def evaluate(proid):
-
     if request.method == 'GET':
         phone = Phone.objects.with_id(proid)
-        return render_template('Detail/detail.html',product = phone)
+        for evaluated in Average.objects():
+            if evaluated.phone.id == phone.id:
+                n = round(evaluated['averagePoint'])
+                R = round((255 * (5 - n)) / 5)
+                G = round((255 * n) / 5)
+                B = 0
+                return render_template('Detail/product_detail.html',product = phone,red = R, green = G, blue = B, score = n)
     elif request.method == 'POST':
         designlist = []
         screenlist = []
@@ -35,6 +40,7 @@ def evaluate(proid):
         form = request.form
         phone = Phone.objects.get(id = proid)
         design = int(form['design'])
+        print(design)
         screen = int(form['screen'])
         func = int(form['func'])
         exp = int(form['exp'])
@@ -83,7 +89,12 @@ def evaluate(proid):
 
         new_averagePoint.update(set__averagePoint = average)
 
-        return render_template("Detail/detail.html", average = "{0:.1f}".format(average), product = phone)
+        n = round(average)
+        R = round((255 * (5 - n)) / 5)
+        G = round((255 * n) / 5)
+        B = 0
+
+        return render_template("Detail/product_detail.html", score = "{0:.1f}".format(average), product = phone,red = R, green = G, blue = B)
 
 if __name__ == '__main__':
   app.run(debug=True)
