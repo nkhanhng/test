@@ -7,7 +7,7 @@
       <div class="card-body">
         <h5 class="card-title text-center"> {{ phone_list[0].product_name }} </h5>
         <div class="d-flex button">
-          <a href="#" class="btn btn-primary">Xem chi tiết</a>
+          <a href="{{ url_for ('evaluate',proid = product.id) }}" class="btn btn-primary">Xem chi tiết</a>
         </div>
       </div>
     </div>
