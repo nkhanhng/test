@@ -1,9 +1,14 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+}
+
 .font-lobster {
   font-family: 'Lobster', cursive;
 }
 
-.body-padding-top {
-    padding-top: 66px;
+.mb-300px {
+  margin-bottom: 300px;
 }
 
 .logo {
@@ -155,25 +160,39 @@
 
 }
 
-.iphonex{
-  background-image: url("../../static/image/iphonex.jpg");
+.background-banner{
+  background-image: url("../../static/image/banner8.jpg");
 }
 
-.display-block {
-  display: block;
+.dropdown-submenu>a:after {
+  padding-left: 10px;
+}
+
+.dropdown-submenu {
+  padding:10px;
+}
+
+.dark-ul-bg {
+  background-color: #343a40;
+}
+
+.borderline {
+    width: 190px;
+
+}
+
+.form-transparent {
+  background-color: transparent;
 }
 
 .text-size-2em {
    font-size: 2em;
 }
 
-.text-size-4em {
-   font-size: 4em;
-}
-
-.text-size-400-percent {
-    font-size: 400%;
-    font-weight: bold;
+.border-width-15px {
+  border-width: 15px;
+  border-style: solid;
+  border-radius: 50%;
 }
 
 .sizing {
@@ -181,10 +200,9 @@
   height: 130px;
 }
 
-.border-width-15px {
-  border-width: 15px;
-  border-style: solid;
-  border-radius: 50%;
+.text-size-400-percent {
+    font-size: 400%;
+    font-weight: bold;
 }
 
 .font-family-roboto {

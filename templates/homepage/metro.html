@@ -1,48 +1,23 @@
 <div id="teleport" class="h-w-550px text-color">
-  <h1 class="title1">Điện thoại tiêu biểu</h1>
-  <div class="d-flex justify-content-around mt-30px">
-
-    <div class="card" style="width: 250px;">
-      <img class="card-img-top" src= {{ phone_list[0].product_main_image }} >
-      <div class="card-body">
-        <h5 class="card-title text-center"> {{ phone_list[0].product_name }} </h5>
-        <div class="d-flex button">
-          <a href="{{ url_for ('evaluate',proid = product.id) }}" class="btn btn-primary">Xem chi tiết</a>
+  <h1 class="title1">Điện thoại trong TOP</h1>
+  <div class="mt-30px">
+    <div class="d-flex justify-content-around">
+      {% for sp in top4 %}
+        <div class="card" style="width: 250px;">
+          <a href="{{url_for('evaluate',proid = sp.phone.id )}}">
+            <img class="card-img-top" src= "{{ sp.phone.product_main_image }}" >
+          </a>
+          <div class="card-body">
+            <h5 class="card-title text-center h-48px"> {{ sp.phone.product_name }} </h5>
+            <div class="d-flex justify-content-around button text-white">
+              <div class="top_evalue av-w text-center mb-1 pt-2">
+                {{ sp.averagePoint }}
+              </div>
+              <a href="{{url_for('evaluate',proid = sp.phone.id )}}" class="btn btn-success pt-2 h-45px">Đánh giá</a>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-
-
-    <div class="card" style="width: 250px;">
-      <img class="card-img-top" src= {{ phone_list[1].product_main_image }} >
-      <div class="card-body">
-        <h5 class="card-title text-center"> {{ phone_list[1].product_name }} </h5>
-        <div class="d-flex button">
-          <a href="#" class="btn btn-primary">Xem chi tiết</a>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="card" style="width: 250px;">
-      <img class="card-img-top" src= {{ phone_list[2].product_main_image }} >
-      <div class="card-body">
-        <h5 class="card-title text-center"> {{ phone_list[2].product_name }} </h5>
-        <div class="d-flex button">
-          <a href="#" class="btn btn-primary">Xem chi tiết</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="card" style="width: 250px;">
-      <img class="card-img-top" src= {{ phone_list[3].product_main_image }} >
-      <div class="card-body">
-        <h5 class="card-title text-center "> {{ phone_list[3].product_name }} </h5>
-        <div class="d-flex button">
-          <a href="#" class="btn btn-primary">Xem chi tiết</a>
-        </div>
-      </div>
+      {% endfor %}
     </div>
   </div>
-
 </div>

@@ -7,15 +7,18 @@
 .h-w-550px {
   width: 100%;
   height: 550px;
-  padding-top: 30px;
+  padding-top: 28px;
 }
 
 .bg_loi_ich {
-  background-color: #9c9595;
+  background-image: url("http://townpress.co.za/live/wp-content/uploads/2017/10/build-a-sustainable-community-450-800.jpg");
+  background-size:cover;
+  background-attachment: fixed;
+  background-blend-mode: multiply;
 }
 
 .text-color {
-  color: rgb(222, 12, 37);
+  color: rgb(0, 0, 0);
 }
 
 .block1 {
@@ -66,3 +69,39 @@
   padding-top: 20px;
   font-size: 16px;
 }
+
+.compare-h {
+  height: 200px;
+  background-color: rgba(204, 204, 204, 0.79);
+  padding-top: 30px;
+}
+
+
+
+.av-w {
+  width: 45px;
+  height: 45px;
+  background-color: #28a745;
+  border-radius: .25rem;
+}
+
+.h-45px {
+  height: 45px;
+}
+
+.h-48px {
+  height: 48px;
+}
+
+.text-color-green {
+  background-color: rgb(146, 206, 40);
+  border-style: none;
+}
+
+.font-lobster {
+  font-family: 'Lobster', cursive;
+}
+
+/* .opacity-0.8{
+  opacity: 0.8;
+} */

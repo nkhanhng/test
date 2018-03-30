@@ -20,10 +20,13 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
     <a class="navbar-brand" href="#">
-      <img src="../../static/image/logo.PNG" width="40" height="40" alt="">
+      <img src="../static/image/logo2.PNG" border-radius="50%" width="40" height="40" alt="">
     </a>
-    <a class="navbar-brand font-lobster" href="#">TKDB</a>
+    <a class="navbar-brand font-lobster" href="{{ url_for('index')}}">TKDB</a>
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item">
+        <a class="nav-link ml-3 font-weight-bold" href="{{ url_for('index')}}">Trang chủ</a>
+      </li>
       <li class="nav-item active">
         <!-- <a class="nav-link ml-5" href="#">Danh mục sản phẩm <span class="sr-only">(current)</span></a> -->
         <!-- <div class="dropdown">
@@ -40,38 +43,28 @@
         	 <div class="row">
                 <hr>
                 <div class="dropdown">
-                    <a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-primary" data-target="#" href="/page.html">
+                    <a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-primary ml-3 text-light btn-success" data-target="#" href="/page.html">
                         Danh mục sản phẩm<span class="caret"></span>
                     </a>
-            		<ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+            		  <ul class="dropdown-menu multi-level dark-ul-bg" role="menu" aria-labelledby="dropdownMenu">
                       <li class="divider"></li>
-                      <li class="dropdown-submenu">
-                        <a tabindex="-1" href="#">Iphone</a>
-                        <ul class="dropdown-menu">
-                          <li><a tabindex="-1" href="#">Iphone X</a></li>
-                            <ul class="dropdown-menu">
-                                <li><a href="#" class="iphonex"></a></li>
-                            </ul>
-                            <!-- <li class="dropdown-submenu">
-                              <a href="#">Even More..</a>
-                              <ul class="dropdown-menu">
-                                  <li><a href="#">3rd level</a></li>
-                              	<li><a href="#">3rd level</a></li>
-                              </ul>
-                            </li> -->
-                          <li><a href="#">Iphone 8</a></li>
-                          <li><a href="#">Iphone 7s</a></li>
+                      <li class="dropdown-submenu text-light">
+                        <a class="text-light" tabindex="-1" href="#">Iphone</a>
+                        <ul class="dropdown-menu dark-ul-bg text-light borderline">
+                          <li class="pl-2 pb-2"><a class="text-light" tabindex="-1" href="#">Iphone X</a></li>
+                          <li class="pl-2 pb-2"><a class="text-light" href="#">Iphone 8</a></li>
+                          <li class="pl-2 pb-2"><a class="text-light" href="#">Iphone 7s</a></li>
                         </ul>
                       </li>
 
                       <li class="divider"></li>
-                      <li class="dropdown-submenu">
-                        <a tabindex="-1" href="#">Samsung</a>
-                        <ul class="dropdown-menu">
-                          <li><a tabindex="-1" href="#">Samsung Galaxy S8</a></li>
-                          <li><a href="#">Samsung Galaxy C9 Pro</a></li>
-                          <li><a href="#">Samsung Galaxy S9+</a></li>
-                          <li><a href="#">Samsung Galaxy Note 8</a></li>
+                      <li class="dropdown-submenu text-light">
+                        <a class="text-light" tabindex="-1" href="#">Samsung</a>
+                        <ul class="dropdown-menu dark-ul-bg text-light borderline">
+                          <li class="pl-2 pb-2"><a class="text-light" tabindex="-1" href="#">Samsung Galaxy S8</a></li>
+                          <li class="pl-2 pb-2"><a class="text-light" href="#">Samsung Galaxy C9 Pro</a></li>
+                          <li class="pl-2 pb-2"><a class="text-light" href="#">Samsung Galaxy S9+</a></li>
+                          <li class="pl-2 pb-2"><a class="text-light" href="#">Samsung Galaxy Note 8</a></li>
                         </ul>
                       </li>
                     </ul>
@@ -80,10 +73,10 @@
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link ml-3" href="#">So sánh</a>
+        <a class="nav-link ml-3" href="{{ url_for('compare')}}">So sánh</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link ml-3" href="#">Blog</a>
+        <a class="nav-link ml-3" href="http://www.yan.vn/dien-thoai-di-dong.htm">Blog</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
@@ -94,13 +87,13 @@
 
   <div class="collapse navbar-collapse mr-5 d-flex flex-row-reverse align-middle" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link" href="#">
+      <a class="nav-item nav-link" href="http://facebook.com" target="_blank">
         <i class="fab fa-facebook fa-2x"></i>
       </a>
-      <a class="nav-item nav-link ml-3" href="#">
+      <a class="nav-item nav-link ml-3" href="http://twitter.com" target="_blank">
         <i class="fab fa-twitter-square fa-2x"></i>
       </a>
-      <a class="nav-item nav-link ml-3" href="#">
+      <a class="nav-item nav-link ml-3" href="http://instagram.com" target="_blank">
         <i class="fab fa-instagram fa-2x"></i>
       </a>
     </div>
