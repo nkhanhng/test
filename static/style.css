@@ -216,3 +216,68 @@ body {
 .body-padding-top {
     padding-top: 66px;
 }
+
+.container {
+  position: relative;
+  width: 100%;
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #000000;
+}
+
+.container:hover .overlay {
+  opacity: 0.75;
+}
+
+.text {
+  color: white;
+  font-size: 17px;
+}
+
+.h1-black-center {
+  color: black;
+  align-items: center;
+}
+
+.text-size-24px {
+  font-size: 24px;
+}
+
+.span-border {
+  border-style: solid;
+  border-width: 7px;
+  border-color: #6c757d;
+}
+
+#brand_logo {
+    display: block;
+    position: relative;
+    margin: auto;
+    width:  150px;
+    height: auto;
+    background-repeat:   no-repeat;
+    background-size:     cover;
+  }
+
+#brand_logo_div {
+  height: 150px;
+}

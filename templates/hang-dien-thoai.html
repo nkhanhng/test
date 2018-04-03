@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>TKDB -  Các hãng điện thoại</title>
+    {% include "meta-data.html" %}
+  </head>
+  <body>
+    {% include "homepage/navigation.html" %}
+    <section class="body-padding-top d-flex flex-row flex-wrap">
+    {% for brand_name in brand_name_list %}
+      <div class="card" style="width: 18rem;">
+        {% for item in brand %}
+          {% if item.brand_name == brand_name %}
+        <div id = "brand_logo_div" style = ''><img id = "brand_logo" class="card-img-top" src="{{item.logo}}" alt="Card image cap" style =''></div>
+          {% endif %}
+        {% endfor %}
+        <div class="card-body">
+          <h5 class="card-title">{{brand_name}}</h5>
+          <p class="card-text"></p>
+          <a href="/hang-dien-thoai/{{brand_name}}" class="btn btn-primary">Xem sản phẩm</a>
+        </div>
+      </div>
+    {% endfor %}
+    </section>
+    {% include "homepage/footer.html" %}
+  </body>
+</html>

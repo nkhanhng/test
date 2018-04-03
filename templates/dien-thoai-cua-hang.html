@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>TKDB -  Danh sách điện thoại {{brand_name}}</title>
+    {% include "meta-data.html" %}
+  </head>
+  <body>
+    {% include "homepage/navigation.html" %}
+    <section class="body-padding-top-80px">
+      <h1 class="text-center font-family-roboto">Điện thoại {{brand_name}}</h1>
+      <section class="d-flex flex-row flex-wrap margin-30px">
+      {% for item in phone %}
+        <div class="card p-3" style="width: 18rem;">
+          <a href="/danhgiasanpham/{{item.id}}">
+            <div class="container">
+              <img class="card-img-top detail-on-hover" src="{{item.product_main_image}}" alt="Card image cap">
+              <div class="overlay">
+                  <p class="text mt-4 ml-2">{{item.display_size}}, {{item.display_resolution}}</p>
+                  <p class="text mt-4 ml-2">{{item.chipset}}</p>
+                  <p class="text mt-4 ml-2">{{item.ram}} RAM</p>
+                  <p class="text mt-4 ml-2">{{item.rom}} ROM</p>
+              </div>
+            </div>
+          </a>
+            <div class="card-body">
+              <h5 class="card-title font-family-roboto">{{item.product_name}}</h5>
+              <p class="card-text"></p>
+              <a href="/danhgiasanpham/{{item.id}}" class="btn btn-primary font-family-roboto">Đánh giá</a>
+            </div>
+        </div>
+      {% endfor %}
+      </section>
+    </section>
+    {% include "homepage/footer.html" %}
+  </body>
+</html>

@@ -3,10 +3,21 @@ import mlab
 from models.phone import Phone
 from models.evaluate import Evaluate
 from models.average import Average
-
+from forms.forms import ProductSearchForm
+from models.brand import Brand
 
 mlab.connect()
 app = Flask(__name__)
+
+def brandname():
+    phone = Phone.objects()
+    brand_name_list = []
+    brand_name =""
+    for item in phone:
+        if brand_name != item.phone_brand_name:
+            brand_name = item.phone_brand_name
+            brand_name_list.append(brand_name)
+    return(brand_name_list)
 
 @app.route('/', methods=["GET", "POST"])
 def index():
@@ -14,23 +25,16 @@ def index():
         # phone_list = Phone.objects()
         SP_ordered = Average.objects().order_by("-averagePoint")
         top4 = []
+        brand_name_list = brandname()
         for i in SP_ordered[0:4]:
             phone_dict = {}
             phone_dict["phone"] = Phone.objects.get(id=i.phone.id)
             phone_dict["averagePoint"] = round(i.averagePoint, 1)
             top4.append(phone_dict)
-        return render_template('index.html', top4=top4)
+        return render_template('index.html', top4=top4,brand_name_list = brand_name_list)
 
     elif request.method == "POST":
-        # form = request.form
-        # name1 = form["name1"]
-        # name2 = form["name2"]
-        # regex1 = re.compile(name1)
-        # regex2 = re.compile(name2)
-        # phone_li1 = Phone.objects(product_name=regex1)
-        # phone_li2 = Phone.objects(product_name=regex2)
-        # session["phone_li1"] = phone_li1
-        # session["phone_li2"] = phone_li2
+
 
         return redirect("/result")
 
@@ -54,12 +58,24 @@ def result():
     elif request.method == "POST":
         form = request.form
         name = form["name"]
-        # name1 = form["name2"]
-        # regex1 = re.compile(name1)
-        # regex2 = re.compile(name2)
-        # phone_li1 = Phone.objects(product_name=regex1)
-        # phone_li2 = Phone.objects(product_name=regex2)
         return "a"
+
+@app.route('/hang-dien-thoai')
+def cac_hang_dien_thoai():
+    brand = Brand.objects()
+    brand_name_list = brandname()
+    return render_template('hang-dien-thoai.html', brand_name_list = brand_name_list, brand = brand)
+
+@app.route('/hang-dien-thoai/<brand_name>')
+def chi_tiet_hang_dien_thoai(brand_name):
+    brand_name_list = brandname()
+    phone = Phone.objects()
+    phone_list = []
+    phone_data = []
+    for item in phone:
+        if item.phone_brand_name == brand_name:
+            phone_data.append(item)
+    return render_template('dien-thoai-cua-hang.html',phone = phone_data, brand_name = brand_name, brand_name_list = brand_name_list)
 
 @app.route('/danhgiasanpham/<proid>',methods = ['GET','POST'])
 def evaluate(proid):

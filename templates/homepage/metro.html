@@ -5,7 +5,15 @@
       {% for sp in top4 %}
         <div class="card" style="width: 250px;">
           <a href="{{url_for('evaluate',proid = sp.phone.id )}}">
-            <img class="card-img-top" src= "{{ sp.phone.product_main_image }}" >
+            <div class="container">
+              <img class="card-img-top detail-on-hover" src="{{sp.phone.product_main_image}}" alt="Card image cap">
+              <div class="overlay">
+                  <p class="text mt-4 ml-2">{{sp.phone.display_size}}, {{sp.phone.display_resolution}}</p>
+                  <p class="text mt-4 ml-2">{{sp.phone.chipset}}</p>
+                  <p class="text mt-4 ml-2">{{sp.phone.ram}} RAM</p>
+                  <p class="text mt-4 ml-2">{{sp.phone.rom}} ROM</p>
+              </div>
+            </div>
           </a>
           <div class="card-body">
             <h5 class="card-title text-center h-48px"> {{ sp.phone.product_name }} </h5>
