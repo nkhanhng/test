@@ -3,7 +3,7 @@ import mlab
 from models.phone import Phone
 from models.evaluate import Evaluate
 from models.average import Average
-from forms.forms import ProductSearchForm
+from models.forms import ProductSearchForm
 from models.brand import Brand
 
 mlab.connect()
