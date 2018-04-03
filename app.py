@@ -154,7 +154,7 @@ def evaluate(proid):
         G = round((255 * n) / 5)
         B = 0
 
-        return render_template("Detail/product_detail.html", score = "{0:.1f}".format(average), product = phone,red = R, green = G, blue = B)
+        return render_template("Detail/product_detail.html", score = "{0:.1f}".format(average), product = phone,red = R, green = G, blue = B,brand_name_list = brand_name_list)
 
 if __name__ == '__main__':
   app.run(debug=True)
