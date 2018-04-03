@@ -79,6 +79,7 @@ def chi_tiet_hang_dien_thoai(brand_name):
 
 @app.route('/danhgiasanpham/<proid>',methods = ['GET','POST'])
 def evaluate(proid):
+    brand_name_list = brandname()
     if request.method == 'GET':
         phone = Phone.objects.with_id(proid)
         for evaluated in Average.objects():
@@ -87,7 +88,7 @@ def evaluate(proid):
                 R = round((255 * (5 - n)) / 5)
                 G = round((255 * n) / 5)
                 B = 0
-                return render_template('Detail/product_detail.html',product = phone,red = R, green = G, blue = B, score = n)
+                return render_template('Detail/product_detail.html',product = phone,red = R, green = G, blue = B, score = n, brand_name_list = brand_name_list)
     elif request.method == 'POST':
         designlist = []
         screenlist = []
